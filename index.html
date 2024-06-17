@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'gill sans';
+        }
+
+        html,
+        body {
+            height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+
+        nav {
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1vw 4vw;
+            /* border: 1px solid black; */
+
+
+        }
+
+        nav img {
+            margin-left: 8vw;
+        }
+
+        nav #nav-part2 {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            gap: 5vw;
+            position: relative;
+            left: 4%;
+            /* border: 1px solid black; */
+
+        }
+
+        nav #nav-part2 h2 {
+            position: relative;
+        }
+
+        nav #nav-part2 h2::before {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 0%;
+            background-color: black;
+            bottom: 0;
+            transition: all ease 1s;
+        }
+
+        nav #nav-part2 h2:hover::before {
+            width: 100%;
+        }
+
+        nav #button button:hover {
+            transition: all ease 1s;
+            background-color: green;
+            color: white;
+            cursor: pointer;
+        }
+
+        nav #nav-part2 h2 {
+            text-transform: uppercase;
+            font-size: 1vw;
+            text-align: center;
+            font-weight: 100;
+            color: gray;
+            cursor: pointer;
+        }
+
+        #button {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            margin-right: 2vw;
+            /* border: 1px solid black; */
+
+        }
+
+        #button button {
+            padding: .8vw 3vw;
+            border: none;
+            background-color: #15291B;
+            color: white;
+            border-radius: 2px;
+
+        }
+
+
+        #page1 {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            /* border: 1px solid black; */
+
+        }
+
+        #page1 img {
+            filter: grayscale(1);
+            width: 80vw;
+            height: 80vh;
+            object-fit: cover;
+            object-position: 50% 50%;
+            margin: 2vw;
+            transition: all ease 2s;
+
+        }
+
+        #page1 img:hover {
+            filter: grayscale(0);
+            scale: 1.2;
+        }
+
+        #page2Cont {
+            height: 100%;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 8;
+        }
+
+        #page2 {
+            /* border: 2px solid green; */
+            min-height: 50vh;
+            width: 100%;
+            /* border: 1px solid black; */
+            position: sticky;
+            top: 0;
+            z-index: 8;
+
+
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 10vw;
+            /* border: 1px solid black; */
+            height: 50%;
+            gap: 3vw;
+        }
+
+        #container p {
+            text-align: center;
+            width: 70%;
+            line-height: 2vw;
+            font-size: 1.4vw;
+        }
+
+        #container button {
+            padding: .5vw 2vw;
+            font-size: 2vw;
+            font-weight: 300;
+            color: gray;
+        }
+
+        #page3 {
+            height: 100%;
+            width: 100%;
+            /* background-color: skyblue; */
+            position: relative;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+
+        }
+
+        #page3 #img {
+            /* border: 2px solid black ; */
+            margin: auto;
+            width: 100vw;
+            height: 70vh;
+            object-fit: cover;
+            object-position: 45% 45%;
+
+
+        }
+
+        #page4 {
+            height: 50vh;
+            width: 100vw;
+            background-color: antiquewhite;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+
+
+
+        }
+
+        #page4 input {
+            height: 20px;
+            width: 200px;
+            margin: .7vw;
+        }
+
+        @media (max-width:767px) {
+            nav {
+                width: 100vw;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1vw 4vw;
+                /* border: 1px solid black; */
+
+
+            }
+
+            nav img {
+                margin-left: 8vw;
+                height: 10vh;
+                width: 30vw;
+            }
+
+            nav #nav-part2 {
+                display: none;
+                /* border: 1px solid black; */
+
+            }
+
+            nav #button button {
+                cursor: pointer;
+            }
+
+
+
+            #button {
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                margin-right: 2vw;
+                /* border: 1px solid black; */
+
+            }
+
+            #button button {
+                padding: .8vw 3vw;
+                border: none;
+                background-color: #15291B;
+                color: white;
+                border-radius: 2px;
+
+            }
+
+            #page1 {
+                width: 100%;
+                height: fit-content;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                /* border: 1px solid black; */
+
+            }
+
+            #page1 img {
+                filter: grayscale(0);
+                width: 70vw;
+                height: 50vh;
+                object-fit: cover;
+                object-position: 50% 50%;
+                margin: 2vw;
+
+            }
+
+            #page1 img:hover {
+                filter: grayscale(0);
+                scale: 1;
+            }
+
+
+            #page2Cont {
+                height: 100%;
+                width: 100%;
+                position: sticky;
+                top: 0;
+                z-index: 8;
+            }
+
+            #page2 {
+                /* border: 2px solid green; */
+                min-height: 50vh;
+                width: 100%;
+                /* border: 1px solid black; */
+                position: sticky;
+                top: 0;
+                z-index: 8;
+
+
+            }
+
+            #container h2 {
+                font-size: 6vw;
+                text-align: center;
+            }
+
+            #container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin: 10vw;
+                /* border: 1px solid black; */
+                height: 50%;
+                gap: 3vw;
+            }
+
+            #container p {
+                text-align: justify;
+                width: 100%;
+                line-height: 5vw;
+                font-size: 4.4vw;
+
+            }
+
+            #container button {
+                padding: .5vw 2vw;
+                font-size: 4vw;
+                font-weight: 300;
+                color: gray;
+            }
+
+            #page3 {
+                height: 100%;
+                width: 100%;
+                /* background-color: skyblue; */
+                z-index: 10;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+
+            }
+
+            #page3 #img {
+                /* border: 2px solid black ; */
+                margin: auto;
+                width: 100vw;
+                height: 40vh;
+                object-fit: cover;
+                object-position: 45% 45%;
+
+
+            }
+
+            #page4 {
+                height: 50vh;
+                width: 100vw;
+                background-color: antiquewhite;
+                position: relative;
+                z-index: 10;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+
+
+
+            }
+
+            #page4 h2 {
+                font-size: 8vw;
+            }
+
+            #page4 input[type="text"],
+            input[type="number"],
+            input[type="submit"] {
+                font-size: 5vw;
+            }
+
+            #page4 input {
+                height: 30px;
+                width: 250px;
+                margin: .7vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <div id="img">
+                <img src="https://static.wixstatic.com/media/bc139a_2e4e3dbd85354ecd837e8ce8e7c9859f~mv2.png/v1/crop/x_80,y_54,w_1608,h_616/fill/w_193,h_74,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Mane%20Logo%20-%20FULL%20COLOUR-01.png"
+                    alt="">
+            </div>
+            <div id="nav-part2">
+                <h2>Home</h2>
+                <h2>about</h2>
+                <h2>services</h2>
+                <h2>products</h2>
+                <h2>contact</h2>
+            </div>
+            <div id="button">
+                <button>book now</button>
+            </div>
+        </nav>
+        <div id="page1">
+
+            <img src="https://static.wixstatic.com/media/bc139a_c38d8dbb4a3044b5968d65b760062952~mv2_d_2048_3072_s_2.jpg/v1/fill/w_314,h_565,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/bc139a_c38d8dbb4a3044b5968d65b760062952~mv2_d_2048_3072_s_2.jpg"
+                alt="">
+
+            <img src="https://static.wixstatic.com/media/bc139a_bc54c4022e324bdaba430db9c0436162~mv2_d_2048_3072_s_2.jpg/v1/fill/w_313,h_565,al_b,q_80,usm_0.66_1.00_0.01,enc_auto/bc139a_bc54c4022e324bdaba430db9c0436162~mv2_d_2048_3072_s_2.jpg"
+                alt="">
+
+
+            <img src="https://static.wixstatic.com/media/bc139a_5ce3811ad5f8483da8599ca850e07340~mv2_d_2048_3072_s_2.jpg/v1/fill/w_314,h_565,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/bc139a_5ce3811ad5f8483da8599ca850e07340~mv2_d_2048_3072_s_2.jpg"
+                alt="">
+
+
+        </div>
+        <div id="page2Cont">
+            <div id="page2">
+                <div id="container">
+                    <h2>We have the freedom to choose, so we chose to be good.</h2>
+                    <p>At Mane Ethical Hairdressing we have exercised our power to choose, and in doing so we have
+                        created a
+                        space and a community of shared values. Being sustainable and ethical isn't always the easiest
+                        of
+                        paths, however we made a conscious effort to explore and research salon options that positively
+                        contribute to making a better world.
+                        We hope you enjoy what we have created.</p>
+                    <button>book appointment now</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="page3">
+            <img id="img"
+                src="https://images.unsplash.com/photo-1604681630513-69474a4e253f?q=80&w=1527&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+        </div>
+
+        <div id="page4">
+            <h2>Contact me</h2>
+            <form action="" method=""></form>
+            <input type="text" placeholder="Enter your name">
+            <input type="number" placeholder="Enter your number">
+            <input type="submit">
+        </div>
+    </main>
+    <script>
+        var btn=document.querySelector("nav button")
+        btn.addEventListener("click",function(){
+            btn.innerHTML="You Have Already Booked"
+            btn.style.backgroundColor="green"
+            setTimeout(function () {
+                    btn.innerHTML = "Book Now"; // Restore original text
+                    btn.style.backgroundColor="black"
+                }, 5000); // 2000 milliseconds = 2 seconds
+            });
+
+    </script>
+</body>
+
+</html>
